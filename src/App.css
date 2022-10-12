@@ -11,18 +11,3 @@
   margin-right: auto;
   margin-left: auto;
 }
-.header {
-  grid-area : h;
-  background-color: green;
-}
-.header img {
-  width: 80px;
-}
-.nav {
-  background-color: blue;
-  grid-area: n;
-}
-.content {
-  background-color: purple;
-  grid-area: c;
-}
