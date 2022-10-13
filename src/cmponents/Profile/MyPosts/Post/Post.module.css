@@ -1,0 +1,10 @@
+.item {
+    color: #ffffff;
+}
+.avatarImage {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    object-fit: cover;
+}

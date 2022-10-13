@@ -1,7 +1,7 @@
 import './App.css';
-import Header from "./cmponents/Header";
-import NavBar from "./cmponents/NavBar";
-import Profile from "./cmponents/Profile";
+import Header from "./cmponents/Header/Header";
+import NavBar from "./cmponents/NavBar/NavBar";
+import Profile from "./cmponents/Profile/Profile";
 
 const App = () => {
   return (
