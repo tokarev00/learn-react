@@ -8,7 +8,7 @@ const router = createBrowserRouter([
         element: <App />,
         children: [
             {
-                path: "/profile",
+                index: true,
                 element: <Profile />,
             },
             {
@@ -16,19 +16,19 @@ const router = createBrowserRouter([
                 element: <Profile />,
             },
             {
-                path: "/dialogs",
+                path: "dialogs",
                 element: <Dialogs />,
             },
             {
-                path: "/news",
+                path: "news",
                 element: <div>News</div>,
             },
             {
-                path: "/music",
+                path: "music",
                 element: <div>music</div>,
             },
             {
-                path: "/settings",
+                path: "settings",
                 element: <div>Settings</div>,
             },
         ],

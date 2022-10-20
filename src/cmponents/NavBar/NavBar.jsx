@@ -6,14 +6,16 @@ const NavBar = () => {
         <nav className={s.nav}>
             <div className={s.item}>
                 <NavLink
-                    to={'/profile'}
-                    className={({ isActive }) => isActive ? activeClassName : undefined}>
+                    to={'/'}
+                    end
+                    className={({ isActive }) => isActive ? activeClassName : undefined}
+                >
                     Profile
                 </NavLink>
             </div>
             <div className={s.item}>
                 <NavLink
-                    to={'/dialogs'}
+                    to={'dialogs'}
                     className={({ isActive }) => isActive ? activeClassName : undefined}
                 >
                     Messages
@@ -21,7 +23,7 @@ const NavBar = () => {
             </div>
             <div className={s.item}>
                 <NavLink
-                    to={'/news'}
+                    to={'news'}
                     className={({ isActive }) => isActive ? activeClassName : undefined}
                 >
                     News
@@ -29,7 +31,7 @@ const NavBar = () => {
             </div>
             <div className={s.item}>
                 <NavLink
-                    to={'/music'}
+                    to={'music'}
                     className={({ isActive }) => isActive ? activeClassName : undefined}
                 >
                     Music
@@ -37,7 +39,7 @@ const NavBar = () => {
             </div>
             <div className={s.item}>
                 <NavLink
-                    to={'/settings'}
+                    to={'settings'}
                     className={({ isActive }) => isActive ? activeClassName : undefined}
                 >
                     Settings
