@@ -12,10 +12,6 @@ const router = createBrowserRouter([
                 element: <Profile />,
             },
             {
-                path: "/",
-                element: <Profile />,
-            },
-            {
                 path: "dialogs",
                 element: <Dialogs />,
             },
