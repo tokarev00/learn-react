@@ -2,7 +2,7 @@ import Post from "./Post/Post";
 import s from "./MyPosts.module.css";
 
 const MyPosts = (props) => {
-    let postData = [
+    let posts = [
         {
             id: 1,
             message: 'Hi, How are you?',
@@ -14,6 +14,7 @@ const MyPosts = (props) => {
             likesCount: 22,
         },
     ]
+    let postsElements = posts.map(post => <Post message={post.message} id={post.id} likesCount={post.likesCount} />)
     return(
         <div>
             <h3>My posts</h3>
@@ -26,8 +27,7 @@ const MyPosts = (props) => {
                 </div>
             </div>
             <div className={s.posts}>
-                <Post message={postData[0].message} id={postData[0].id} likesCount={postData[0].likesCount} />
-                <Post message={postData[1].message} id={postData[1].id} likesCount={postData[1].likesCount} />
+                {postsElements}
             </div>
         </div>
     )
