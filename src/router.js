@@ -3,6 +3,8 @@ import Profile from "./cmponents/Profile/Profile";
 import Dialogs from "./cmponents/Dialogs/Dialogs";
 import App from './App';
 import state from "./redux/state";
+import {addPost} from "./redux/state";
+
 const router = createBrowserRouter([
     {
         path: "/",
@@ -10,7 +12,7 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <Profile state={state.profilePage} />,
+                element: <Profile addPost={addPost} state={state.profilePage} />,
             },
             {
                 path: "dialogs",
@@ -31,4 +33,5 @@ const router = createBrowserRouter([
         ],
     },
 ]);
+
 export default router;
