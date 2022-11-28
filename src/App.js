@@ -1,14 +1,19 @@
 import './App.css';
 import Header from "./cmponents/Header/Header";
 import NavBar from "./cmponents/NavBar/NavBar";
-import { Outlet } from "react-router-dom";
-const App = () => {
+ import { Route, Routes } from "react-router-dom";
+import Dialogs from "./cmponents/Dialogs/Dialogs";
+import Profile from "./cmponents/Profile/Profile";
+const App = (props) => {
   return (
       <div className="app-wrapper">
           <Header />
           <NavBar />
           <div className="app-wrapper-content">
-              <Outlet />
+              <Routes>
+                  <Route path="/dialogs" element={<Dialogs state={props.state.dialogsPage}/>} />
+                  <Route path="/" element={<Profile addPost={props.addPost} state={props.state.profilePage} />} />
+              </Routes>
           </div>
       </div>
   );
