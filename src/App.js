@@ -1,9 +1,10 @@
 import './App.css';
 import Header from "./cmponents/Header/Header";
 import NavBar from "./cmponents/NavBar/NavBar";
- import { Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Dialogs from "./cmponents/Dialogs/Dialogs";
 import Profile from "./cmponents/Profile/Profile";
+
 const App = (props) => {
   return (
       <div className="app-wrapper">
