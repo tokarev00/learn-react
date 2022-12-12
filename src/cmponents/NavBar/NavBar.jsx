@@ -32,6 +32,14 @@ const NavBar = () => {
             </div>
             <div className={s.item}>
                 <NavLink
+                    to={'users'}
+                    className={({ isActive }) => isActive ? activeClassName : undefined}
+                >
+                    Users
+                </NavLink>
+            </div>
+            <div className={s.item}>
+                <NavLink
                     to={'music'}
                     className={({ isActive }) => isActive ? activeClassName : undefined}
                 >
