@@ -3,13 +3,15 @@ import styles from './users.module.css';
 import axios from "axios";
 import userPhoto from '../../assets/images/user-picture.png'
 let Users = (props) => {
-    if (props.users.length === 0) {
-        axios({method: 'GET', url:' https://social-network.samuraijs.com/api/1.0/users'}).then(response => {
-            props.setUsers(response.data.items);
-        })
+    let getUsers = () => {
+        if (props.users.length === 0) {
+            axios({method: 'GET', url:' https://social-network.samuraijs.com/api/1.0/users'}).then(response => {
+                props.setUsers(response.data.items);
+            })
+        }
     }
-
     return <div>
+        <button onClick={getUsers}>Get Users</button>
         {
             props.users.map(u => <div className={styles.user} key={u.id}>
                 <div>
