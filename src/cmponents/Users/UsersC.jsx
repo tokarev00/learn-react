@@ -1,16 +1,15 @@
 import React from 'react';
 import styles from './users.module.css';
 import axios from "axios";
-import userPhoto from '../../assets/images/user-picture.png'
+import userPhoto from '../../assets/images/user-picture.png';
 
 class Users extends React.Component {
-    constructor(props) {
-        super(props);
-
+    componentDidMount() {
         axios({method: 'GET', url:' https://social-network.samuraijs.com/api/1.0/users'}).then(response => {
             this.props.setUsers(response.data.items);
         });
     }
+
     render() {
         return <div>
                     {
