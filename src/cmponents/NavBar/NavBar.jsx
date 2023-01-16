@@ -7,8 +7,7 @@ const NavBar = () => {
         <nav className={s.nav}>
             <div className={s.item}>
                 <NavLink
-                    to={'/'}
-                    end
+                    to={'profile'}
                     className={({ isActive }) => isActive ? activeClassName : undefined}
                 >
                     Profile
