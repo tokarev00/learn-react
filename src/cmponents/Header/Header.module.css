@@ -5,3 +5,9 @@
 .header img {
     width: 80px;
 }
+.loginBlock {
+    display: inline-block;
+}
+.loginBlock a {
+    color: white;
+}

@@ -1,5 +1,5 @@
 import './App.css';
-import Header from "./cmponents/Header/Header";
+import HeaderContainer from "./cmponents/Header/HeaderContainer";
 import NavBar from "./cmponents/NavBar/NavBar";
 import { Route, Routes } from "react-router-dom";
 import Profile from "./cmponents/Profile/ProfileContainer";
@@ -9,7 +9,7 @@ import React from "react";
 const App = () => {
   return (
       <div className="app-wrapper">
-          <Header />
+          <HeaderContainer />
           <NavBar />
           <div className="app-wrapper-content">
               <Routes>
