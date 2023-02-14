@@ -2,7 +2,6 @@ import React from 'react';
 import styles from "./users.module.css";
 import userPhoto from "../../assets/images/user-picture.png";
 import {NavLink} from "react-router-dom";
-import axios from "axios";
 
 
 let Users = (props) => {
@@ -34,32 +33,11 @@ let Users = (props) => {
                         <div>
                             {u.followed ?
                                 <button disabled={props.followingInProgress.some(id => id ===u.id)} onClick={() => {
-                                    props.toggleFollowingProgress(true, u.id);
-                                    axios({
-                                        method: 'DELETE',
-                                        url: ' https://social-network.samuraijs.com/api/1.0/follow/' + u.id,
-                                        withCredentials: true
-                                    }).then(response => {
-                                        if (response.data.resultCode === 0) {
-                                            props.unfollow(u.id);
-                                        }
-                                        props.toggleFollowingProgress(false, u.id);
-                                    });
-                                    props.unfollow(u.id)
+                                    props.unfollow(u.id);
                                 }}>Unfollow</button>
                                 :
                                 <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
-                                    props.toggleFollowingProgress(true,  u.id);
-                                    axios({
-                                        method: 'POST',
-                                        url: ' https://social-network.samuraijs.com/api/1.0/follow/' + u.id,
-                                        withCredentials: true
-                                    }).then(response => {
-                                        if (response.data.resultCode === 0) {
-                                            props.follow(u.id);
-                                        }
-                                        props.toggleFollowingProgress(false, u.id);
-                                    });
+                                    props.follow(u.id)
                                 }}>Follow</button>}
                         </div>
                     </div>
