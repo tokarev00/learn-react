@@ -4,7 +4,7 @@ const SET_USER_DATA = 'SET_USER_DATA';
 
 const initialState = {
     userId: null,
-    emaill: null,
+    email: null,
     login: null,
     isAuth: false,
 };

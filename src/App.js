@@ -6,6 +6,7 @@ import Profile from "./cmponents/Profile/ProfileContainer";
 import DialogsContainer from "./cmponents/Dialogs/DialogsContainer";
 import UsersContainer from "./cmponents/Users/UsersContainer";
 import React from "react";
+import Login from "./cmponents/Login/Login";
 const App = () => {
   return (
       <div className="app-wrapper">
@@ -18,6 +19,7 @@ const App = () => {
                   <Route path={'/profile/'} element={<Profile/>} >
                       <Route path=":userId" element={<Profile/>} />
                   </Route>
+                  <Route path={'/login/'} element={<Login>Login</Login>} />
               </Routes>
           </div>
       </div>
