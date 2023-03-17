@@ -2,6 +2,9 @@ import React from "react";
 import { Field, reduxForm } from 'redux-form'
 import {Input} from "../common/FormsControls/FormControls";
 import {requiredField} from "../../utils/validators/validators";
+import {login} from "../../redux/auth-reducer";
+import {connect} from "react-redux";
+import {Navigate} from "react-router-dom";
 
 
 const LoginForm = (props) => {
@@ -23,7 +26,7 @@ const LoginForm = (props) => {
                     placeholder="Password"
                     component={Input}
                     validate={[requiredField]}
-                    type="text"
+                    type="password"
                 />
             </div>
             <div>
@@ -40,12 +43,18 @@ const ReduxLoginForm = reduxForm({form: 'login'})(LoginForm)
 
 const Login = (props) => {
     const onSubmitHandler = values => {
-        console.log(values)
+        props.login(values.login, values.password, values.rememberMe);
     };
+    if (props.isAuth) {
+        return <Navigate to={'/profile/'} />
+    }
     return  <div>
         <h1>login</h1>
         <ReduxLoginForm onSubmit={onSubmitHandler} />
     </div>
 }
 
-export default Login
+const mapStateToProps = (state) => ({
+    isAuth: state.auth.isAuth,
+})
+export default  connect(mapStateToProps, {login})(Login)
