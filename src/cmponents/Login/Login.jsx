@@ -7,8 +7,7 @@ import {connect} from "react-redux";
 import {Navigate} from "react-router-dom";
 import s from '../common/FormsControls/FormControls.module.css'
 
-const LoginForm = (props) => {
-    const { handleSubmit } = props
+const LoginForm = ({handleSubmit, error}) => {
     return  (
         <form onSubmit={handleSubmit}>
             <div>
@@ -33,7 +32,7 @@ const LoginForm = (props) => {
                 <Field name="rememberMe" component="input" type="checkbox" />
                 <label htmlFor="rememberMe">remember me</label>
             </div>
-            {props.error && <div className={s.formSummaryError} >{props.error}</div>}
+            {error && <div className={s.formSummaryError} >{error}</div>}
             <div>
                 <button>Login</button>
             </div>
@@ -42,11 +41,11 @@ const LoginForm = (props) => {
 }
 const ReduxLoginForm = reduxForm({form: 'login'})(LoginForm)
 
-const Login = (props) => {
+const Login = ({login, isAuth}) => {
     const onSubmitHandler = (values) => {
-        props.login(values.login, values.password, values.rememberMe);
+        login(values.login, values.password, values.rememberMe);
     };
-    if (props.isAuth) {
+    if (isAuth) {
         return <Navigate to={'/profile/'} />
     }
     return  <div>

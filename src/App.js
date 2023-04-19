@@ -12,7 +12,6 @@ import {compose} from "redux";
 import {withRouter} from "./hoc/withRouter";
 import {initializeApp} from "./redux/app-reducer";
 import Preloader from "./cmponents/common/Preloader/Preloader";
-import {withAuthRedirect} from "./hoc/withAuthRedirect";
 
 class App extends React.Component {
     componentDidMount() {
