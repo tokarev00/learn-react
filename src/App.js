@@ -1,7 +1,7 @@
 import './App.css';
 import HeaderContainer from "./cmponents/Header/HeaderContainer";
 import NavBar from "./cmponents/NavBar/NavBar";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, HashRouter, Route, Routes} from "react-router-dom";
 import React, {lazy, Suspense} from "react";
 import Login from "./cmponents/Login/Login";
 import {connect, Provider} from "react-redux";
@@ -54,11 +54,11 @@ let AppContainer = compose(
 
 let WholeApp = () => {
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Provider store={store}>
                 <AppContainer />
             </Provider>
-        </BrowserRouter>
+        </HashRouter>
     )
 }
 export default WholeApp
