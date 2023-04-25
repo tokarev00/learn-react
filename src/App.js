@@ -16,7 +16,7 @@ const DialogsContainer = lazy(()=> import("./cmponents/Dialogs/DialogsContainer"
 
 class App extends React.Component {
     componentDidMount() {
-        this.props.initializeApp()
+        this.props.initializeApp();
     }
     render() {
         if (this.props.initialized) {
@@ -43,7 +43,7 @@ class App extends React.Component {
 }
 function mapStateToProps(state) {
     return {
-        initialized: state.app.initialized
+        initialized: state.app.initialized,
     }
 }
 
